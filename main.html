@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <title>NASA Space Apps</title>
+  
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.11.0/dist/geosearch.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    
+    <div id="map"></div>
+    
+    <div id="coordinates"></div>
+    <nav class="navbar-main">
+        <ul class="navlinks">
+            <li><span>Quick Nav</span></li>
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="main.html">Explore</a></li>
+            <li><a href="cunt">Analyze</a></li>
+            <li><a href="info.html">Resources</a></li>
+        </ul>
+    </nav>
+    <div id="dynamic-legend" class="legend-card smap">
+        <div id="legend-title" class="legend-title">Soil Moisture Index</div>
+        <div id="legend-subtitle" class="legend-subtitle">SMAP / Model</div>
+        <div class="gradient-bar"></div>
+        <div class="scale-labels">
+            <span id="label-min">0.000 m³/m³</span>
+            <span id="label-max">0.700 m³/m³</span>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    <script src="https://unpkg.com/leaflet-geosearch@3.11.0/dist/geosearch.umd.js"></script>
+
+    <script src="app.js"></script>
+    <script src="draw.js"></script>
+    
+</body>
+</html>

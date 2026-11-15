@@ -60,7 +60,7 @@ function Coordinates(layer) {
     
     const analysisBox = document.getElementById('analysis');
 
-    let html = `<h4 style="font-size: 14px;margin: 0 0 8px 0; color:#060d1b">Type: ${featureType}</h4>`;
+    let html = `<h4 style="font-size: 14px; margin: 0 0 8px 0; color:#060d1b">Type: ${featureType}</h4>`;
     html += `<div style="font-size: 16px; margin-bottom: 8px">№ of points: ${coordinates.length}</div>`;
     
     coordinates.forEach((pt, i) => {

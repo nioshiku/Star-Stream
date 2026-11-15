@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <nav class="navbar-main">
+        <img class="logo" src="assets/logov2.jpg" width="30px" height="30px">
+        <ul class="navlinks">
+            <li><span>Star Stream</span></li>
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="main.html">Explore</a></li>
+            <li><a href="analyse.html">Analyze</a></li>
+            <li><a href="info.html">Resources</a></li>
+        </ul>
+    </nav>
+
+    <main class="analyze-container">
+        <div class="analyze-header">
+            <div>
+                <h1>Region Analysis</h1>
+                <p id="coords-display">Coordinates: Loading...</p>
+            </div>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>Temperature</h3>
+                <p id="temp-val">-- °C</p>
+                <p id="temp-comment" class="metric-comment">Analyzing...</p>
+            </div>
+            <div class="metric-card">
+                <h3>Wind Speed</h3>
+                <p id="wind-val">-- km/h</p>
+                <p id="wind-comment" class="metric-comment">Analyzing...</p>
+            </div>
+            <div class="metric-card">
+                <h3>Elevation</h3>
+                <p id="elev-val">-- m</p>
+                <p id="elev-comment" class="metric-comment">Analyzing...</p>
+            </div>
+        </div>
+
+        <div class="bottom-grid">
+            <div class="metric-card map-preview-card">
+                <h3>Sector Telemetry Map</h3>
+                <div id="mini-map"></div>
+            </div>
+        </div>
+    </main>
+    <script src="analyse.js"></script>
+    
+</body>
+</html>

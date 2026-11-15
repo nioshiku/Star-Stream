@@ -10,19 +10,35 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
-    <div id="map"></div>
-    
-    <div id="coordinates"></div>
     <nav class="navbar-main">
+        <img class="logo" src="assets/logov2.jpg" width="30px" height="30px">
         <ul class="navlinks">
-            <li><span>Quick Nav</span></li>
+            <li><span>Star Stream</span></li>
             <li><a href="index.html">Overview</a></li>
             <li><a href="main.html">Explore</a></li>
-            <li><a href="cunt">Analyze</a></li>
+            <li><a href="analyse.html">Analyze</a></li>
             <li><a href="info.html">Resources</a></li>
         </ul>
     </nav>
+    <div id="map"></div>
+    <div id="coordinates"></div>
+
+    <div id="sidebar" class="sidebar">
+        <div id="sidebar-header" class="sidebar-header">Area Analysis</div>
+        <button id="toggle-sidebar" class="sidebar-toggle" title="Collapse/Expand">▶</button>
+        <div class="content">
+            <div id="analysis" class="analysis">
+                <p>Waiting for region selection to analyze...</p>
+            </div>
+        </div>
+        <a href="analyse.html" class="btn-analysis">
+            <span>Detailed Analysis</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+    
     <div id="dynamic-legend" class="legend-card smap">
         <div id="legend-title" class="legend-title">Soil Moisture Index</div>
         <div id="legend-subtitle" class="legend-subtitle">SMAP / Model</div>
@@ -36,6 +52,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
     <script src="https://unpkg.com/leaflet-geosearch@3.11.0/dist/geosearch.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7.4.0/turf.min.js"></script>
 
     <script src="app.js"></script>
     <script src="draw.js"></script>

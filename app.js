@@ -1,6 +1,6 @@
 const map = L.map('map', {
-    center: [20, 0],
-    zoom: 1
+    center: [20.89050, 29.88281],
+    zoom: 2
 });
 
 const scale = L.control.scale ({
@@ -32,7 +32,7 @@ const searchControl = new GeoSearch.GeoSearchControl ({
     retainZoomLevel: false,
     animateZoom: true,
     autoClose: true,
-    searchLabel: 'Search ᶻ 𝗓 𐰁...',
+    searchLabel: 'Search..',
 });
 
 map.addControl(searchControl);
@@ -82,7 +82,7 @@ const ndvi = L.tileLayer('https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/MOD
     minZoom: 1,
     maxZoom: 9,
     format: 'image/png',
-    opacity: 0.8,
+    opacity: 0.7,
     time: '2026-10-01' 
 });
 
@@ -185,3 +185,29 @@ map.on('overlayremove', function (e) {
 
 satellite.addTo(map);
 const layerControl = L.control.layers(baseMaps, overlayMaps,  {position: 'bottomleft'}).addTo(map);
+
+const sidebar = document.getElementById('sidebar');
+const toggleBtn = document.getElementById('toggle-sidebar');
+
+toggleBtn.addEventListener('click', function() {
+    sidebar.classList.toggle('collapsed');
+    if (sidebar.classList.contains('collapsed')) {
+        toggleBtn.textContent = '◀';
+    } else {
+        toggleBtn.textContent = '▶';
+    }
+});
+
+if (typeof map !== 'undefined') {
+    map.on('click', function(e) {
+        const lat = e.latlng.lat.toFixed(4);
+        const lon = e.latlng.lng.toFixed(4);
+
+        localStorage.setItem('selectedLat', lat);
+        localStorage.setItem('selectedLon', lon);
+
+        document.querySelectorAll('a[href*="analyse.html"]').forEach(link => {
+            link.href = `analyse.html?lat=${lat}&lon=${lon}`;
+        });
+    });
+}
